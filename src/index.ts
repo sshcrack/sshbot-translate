@@ -145,7 +145,7 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
           });
 
           let addEmoji = "";
-          if (array !== undefined)
+          if (array)
             addEmoji = array.join(" ") + " "
 
           let final = `${addEmoji}${translated[0].TranslatedText}`;
