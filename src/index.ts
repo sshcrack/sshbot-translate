@@ -125,7 +125,7 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
           const array = msg.match(emojiRegex);
           const filtered = msg.replace(emojiRegex, "");
 
-          const requestUrl = `https://api.microsofttranslator.com/v2/ajax.svc/TranslateArray?appId=%22TlNZarnQP6YQDHSwVGXO-Q-x-x3habdzUZ7omWmglAgM*%22&texts=["${encodeURIComponent(filtered)}"]&to=%22de%22&ctr=&ref=WidgetV2&rgp=22d9c751`;
+          const requestUrl = `https://api.microsofttranslator.com/v2/ajax.svc/TranslateArray?appId=%22TlNZarnQP6YQDHSwVGXO-Q-x-x3habdzUZ7omWmglAgM*%22&texts=["${encodeURIComponent(filtered)}"]&to=%22${toLanguage}%22&ctr=&ref=WidgetV2&rgp=22d9c751`;
 
           progress.tick(0, {
             status: "Translating..."
@@ -138,13 +138,17 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
           progress.tick(0, {
             status: "Waiting..."
           });
-          await delay(100, "waiting");
+          await delay(50, "waiting");
 
           progress.tick(1, {
             status: "Finalizing..."
           });
 
-          let final = `${array !== undefined ? array?.join(" ") + " " : ""}${translated[0].TranslatedText}`;
+          let addEmoji = "";
+          if (array !== undefined)
+            addEmoji = array.join(" ") + " "
+
+          let final = `${addEmoji}${translated[0].TranslatedText}`;
           messages[k] = final;
         }
       }
@@ -154,6 +158,7 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function countValues(messages: any, currentValue = 0) {
   // eslint-disable-next-line functional/no-loop-statement
   for (const k in messages) {
