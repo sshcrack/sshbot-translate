@@ -1,0 +1,1334 @@
+{
+  "Help": {
+    "Commands": {
+      "help": {
+        "usage": "help <Command>",
+        "desc": "Get help for given commands",
+        "aliases": []
+      },
+      "invite": {
+        "usage": "invite",
+        "desc": "Get the invite link for the bot."
+      },
+      "language": {
+        "usage": "language user|global <Language>",
+        "desc": "Sets the users or the guilds language",
+        "permlevel": "User | Server Owner"
+      },
+      "ping": {
+        "usage": "ping",
+        "desc": "Get the ping of the bot"
+      },
+      "prefix": {
+        "usage": "prefix user|global <Prefix>",
+        "desc": "Set your or the guilds prefix",
+        "permlevel": "User | Server Owner"
+      },
+      "settings": {
+        "usage": "settings admins|mods|logs|welcome <Arguments>",
+        "desc": "Settings for the guild\nTry **Help with subcommands",
+        "permlevel": "Server Owner",
+        "examples": [
+          "settings admins|mods add @Mod",
+          "settings logs set #Logs",
+          "settings logs remove",
+          "settings welcome join Welcome {{user}} in {{guildname}} your the #{{membercount}} Member!"
+        ],
+        "aliases": ["settings admins", "settings mods"]
+      },
+      "settings logs": {
+        "usage": "settings logs set|remove #Channel",
+        "desc": "Set the log channel",
+        "subCategory": true
+      },
+      "settings mods": {
+        "usage": "settings mods add|remove|list @Role",
+        "desc": "Add/Remove Moderator Roles",
+        "subCategory": true
+      },
+      "settings admins": {
+        "usage": "settings admins add|remove|list @Role",
+        "desc": "Add/Remove Administrator Roles",
+        "subCategory": true
+      },
+      "settings welcome": {
+        "usage": "settings welcome channel|join|leave LeaveMSG/JoinMSG",
+        "desc": "Variables are {{user}}, {{guildname}}, {{membercount}}",
+        "examples": [
+          "settings welcome channel #welcome",
+          "settings welcome join Welcome {{user}} in {{guildname}} your the #{{membercount}} Member!",
+          "settings welcome join Bye, {{user}}"
+        ],
+        "subCategory": true
+      },
+      "settings youtube": {
+        "usage": "settings youtube channel|join|leave LeaveMSG/JoinMSG",
+        "desc": "Variables are {{user}}, {{guildname}}, {{membercount}}",
+        "examples": [
+          "settings welcome channel #welcome",
+          "settings welcome join Welcome {{user}} in {{guildname}} your the #{{membercount}} Member!",
+          "settings welcome join Bye, {{user}}"
+        ],
+        "subCategory": true
+      },
+      "stats": {
+        "usage": "stats",
+        "desc": "Get the stats of this 🤖!"
+      },
+      "ban": {
+        "usage": "ban @User <Reason>",
+        "desc": "Bans a user"
+      },
+      "clear": {
+        "usage": "clear <Number of Messages | @User>",
+        "desc": "Clears specific messages or messages sent by a user"
+      },
+      "fetch-bans": {
+        "usage": "fetch-bans",
+        "desc": "Fetch all users banned."
+      },
+      "kick": {
+        "usage": "kick @User <Reason>",
+        "desc": "Kicks a member for the given reason."
+      },
+      "mute": {
+        "usage": "mute @User <Reason>",
+        "desc": "Mute a user for the given reason."
+      },
+      "tempban": {
+        "usage": "tempban @User <Duration> <Reason>",
+        "desc": "Bans a user for the given time."
+      },
+      "tempmute": {
+        "usage": "tempmute @User <Duration> <Reason>",
+        "desc": "Mutes a user for the given time.",
+        "permlevel": "Moderator"
+      },
+      "unmute": {
+        "usage": "unmute @User <Reason>",
+        "desc": "Unmutes a user",
+        "permlevel": "Moderator"
+      },
+      "warn": {
+        "usage": "warn @User <Reason>",
+        "des": "Warn a user.",
+        "permlevel": "Moderator"
+      },
+      "autorole": {
+        "usage": "autorole add|remove|list <Emoji> <Link> @Role",
+        "desc": "Gives users a role if they react to the given message.",
+        "examples": [
+          "autorole add ✅ https://discordapp.com/channels/638769122330804234/663084579820666892/663085179325382667 @RulesAccepted"
+        ],
+        "permlevel": "Administrator"
+      },
+      "warnings": {
+        "usage": "warnings @User",
+        "desc": "Get warnings for a user",
+        "aliases": [ "infractions" ]
+      },
+
+
+
+      "disconnect": {
+        "usage": "disconnect",
+        "desc": "Disconnects the bot from your channel",
+        "aliases": [ "dis", "d", "disc", "leave" ],
+        "permlevel": "User"
+      },
+
+      "filter": {
+        "usage": "filter <Filter>",
+        "desc": "Set some filters like bassboost!",
+        "permlevel": "User"
+      },
+
+      "pause": {
+        "usage": "pause",
+        "desc": "Pauses the music",
+        "permlevel": "User",
+        "aliases": [ "p" ]
+      },
+
+      "play": {
+        "usage": "play <song|url>",
+        "desc": "Adds music to the queue",
+        "permlevel": "User",
+        "aliases": [ "search" ]
+      },
+
+      "resume": {
+        "usage": "resume",
+        "desc": "Resumes the music",
+        "permlevel": "User",
+        "aliases": [ "r" ]
+      },
+
+      "skip": {
+        "usage": "skip",
+        "desc": "Skips the current title",
+        "permlevel": "User",
+        "aliases": ["s"]
+      },
+
+      "volume": {
+        "usage": "volume <1 - 100>",
+        "desc": "Set the volume of the bot",
+        "permlevel": "User",
+        "aliases": [ "vol", "v" ]
+      },
+
+      "cat": {
+        "usage": "cat",
+        "desc": "Get a random 🐱",
+        "permlevel": "User"
+      },
+
+      "dog": {
+        "usage": "dog",
+        "desc": "Get a random 🐶",
+        "permlevel": "User"
+      },
+
+      "duck": {
+        "usage": "duck",
+        "desc": "Get a random 🦆",
+        "permlevel": "User"
+      },
+
+      "fox": {
+        "usage": "fox",
+        "desc": "Get a random 🦊",
+        "permlevel": "User"
+      },
+
+      "meme": {
+        "usage": "meme",
+        "desc": "Get a random Meme",
+        "permlevel": "User"
+      },
+
+
+      "advice": {
+        "usage": "advice",
+        "desc": "Get a advice for you and your family!",
+        "permlevel": "User"
+      },
+
+      "button": {
+        "usage": "button",
+        "desc": "Will you press the button?",
+        "permlevel": "User",
+        "aliases": [
+          "will-you-press-the-button",
+          "will-press-button",
+          "button",
+          "press-button"
+        ]
+      },
+
+      "cat-fact": {
+        "usage": "cat-fact",
+        "desc": "Gets you a random 🐱 Fact <:PepoG:736568416932200559>",
+        "permlevel": "User"
+      },
+
+      "cat-name": {
+        "usage": "cat-name",
+        "desc": "Get a random 🐱 name",
+        "permlevel": "User",
+        "aliases": [ "catname" ]
+      },
+
+      "cow": {
+        "usage": "cow",
+        "desc": "Get a beautiful 🐮",
+        "permlevel": "User"
+      },
+
+      "dog-fact": {
+        "usage": "dog-fact",
+        "desc": "Get a random 🐶 fact",
+        "permlevel": "User"
+      },
+
+      "dog-name": {
+        "usage": "dogname <male | female>",
+        "desc": "Get a random 🐶 name",
+        "permlevel": "User",
+        "aliases": [ "dogname" ]
+      },
+
+      "fact": {
+        "usage": "fact",
+        "desc": "Get a random fact",
+        "permlevel": "User"
+      },
+
+      "fortune": {
+        "usage": "fortune",
+        "desc": "🔮 Get your fortune",
+        "permlevel": "User"
+      },
+
+      "historical-event": {
+        "usage": "historical-event",
+        "desc": "Get a historical event that happend today",
+        "permlevel": "User",
+        "aliases": [ "today", "history" ]
+      },
+
+      "joke": {
+        "usage": "joke",
+        "desc": "Get a joke",
+        "permlevel": "User"
+      },
+
+      "kaomoji": {
+        "usage": "kaomoji <Category>",
+        "desc": "Get a random kaomoji with a category",
+        "permlevel": "User"
+      },
+
+      "loremipsum": {
+        "usage": "loremipsum",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "permlevel": "User"
+      },
+
+      "magic8ball": {
+        "usage": "magic8ball <Question>",
+        "desc": "The magic8ball answers questions for you!",
+        "permlevel": "User"
+      },
+
+      "never-have-i-ever": {
+        "usage": "never-have-i-ever",
+        "desc": "Never have I ever...",
+        "permlevel": "User",
+        "aliases": [ "never-have-i", "never-have", "never-ever" ]
+      },
+
+      "number-fact": {
+        "usage": "number-fact <Number>",
+        "desc": "Get a random fact to your favourite number!",
+        "permlevel": "User"
+      },
+
+      "quote": {
+        "usage": "quote",
+        "desc": "Get a random quote",
+        "permlevel": "User"
+      },
+
+      "superb": {
+        "usage": "superb",
+        "desc": "Get a **amazing** superb word",
+        "permlevel": "User"
+      },
+
+      "animesearch": {
+        "usage": "animesearch <Title>",
+        "desc": "Get info to an anime",
+        "permlevel": "User",
+        "aliases": [ "asearch", "anime"]
+      },
+
+      "cash": {
+        "usage": "cash <Cash> to <Cash>",
+        "desc": "Get cash in an other currency",
+        "permlevel": "User",
+        "examples": [
+          "cash 10 EUR to USD"
+        ]
+      },
+
+      "github": {
+        "usage": "github <Search>",
+        "desc": "Get info to a github repository",
+        "permlevel": "User"
+      },
+
+      "hypixel": {
+        "usage": "hypixel <Minecraft name> <Category>",
+        "desc": "Get Hypixel stats for the Minecraft User",
+        "permlevel": "User"
+      },
+
+      "osu": {
+        "usage": "osu <Username>",
+        "desc": "Get the users osu stats",
+        "permlevel": "User"
+      },
+
+      "steam": {
+        "usage": "steam <Game Title>",
+        "desc": "Get info about an steam game",
+        "permlevel": "User"
+      },
+
+      "weather": {
+        "usage": "weather <Location>",
+        "desc": "Get the Weather for the given Location",
+        "permlevel": "User"
+      },
+
+      "wikipedia": {
+        "usage": "wikipedia <Search>",
+        "desc": "Get a wikipedia article for the given search",
+        "permlevel": "User"
+      },
+
+      "ascii-text": {
+        "usage": "ascii-text <Your Text>",
+        "desc": "Turns the given text into ASCII",
+        "permlevel": "User",
+        "aliases": [ "ascii" ]
+      },
+
+      "avatar": {
+        "usage": "avatar @User",
+        "desc": "Get the users avatar",
+        "permlevel": "User"
+      },
+
+      "calc": {
+        "usage": "calc <Math equation>",
+        "desc": "👨‍🎓 Calculates the given Equation",
+        "permlevel": "User"
+      },
+
+      "id": {
+        "usage": "id @User",
+        "desc": "Get the id of a user",
+        "permlevel": "User"
+      },
+
+      "poll": {
+        "usage": "poll <Title>",
+        "desc": "👍👎 Create a poll!",
+        "permlevel": "User"
+      },
+
+      "serverinfo": {
+        "usage": "serverinfo",
+        "desc": "Get information about the server",
+        "permlevel": "User"
+      },
+
+      "say": {
+        "usage": "say <Message>",
+        "desc": "Let the bot say a message for you",
+        "permlevel": "User"
+      },
+
+      "profile": {
+        "usage": "profile @User",
+        "desc": "Get your/the users profile",
+        "permlevel": "User",
+        "examples": ["profile @sshcrack", "profile"]
+      },
+
+      "spin": {
+        "usage": "spin",
+        "desc": "Spin the lucky wheel and loose or win 💸!"
+      },
+
+
+      "angry": {
+        "usage": "angry",
+        "desc": "😡"
+      },
+
+      "bite": {
+        "usage": "bite",
+        "desc": "Bite a member!"
+      },
+
+      "clap": {
+        "usage": "clap",
+        "desc": "👏"
+      },
+
+      "cuddle": {
+        "usage": "cuddle",
+        "desc": "Aww come here 🤗"
+      },
+
+      "dance": {
+        "usage": "dance",
+        "desc":"🕺 Dance"
+      },
+
+      "die": {
+        "usage": "die",
+        "desc": "⚰️ R.I.P"
+      },
+
+      "facepalm": {
+        "usage": "facepalm",
+        "desc": "Haha user so dumb"
+      },
+
+      "flare": {
+        "usage": "flare",
+        "desc": "Flare lol"
+      },
+
+      "greet": {
+        "usage": "greet",
+        "desc": "Henlo 👋"
+      },
+
+      "happy": {
+        "usage": "happy",
+        "desc": "😃"
+      },
+
+      "hug": {
+        "usage": "hug",
+        "desc": "🤗"
+      },
+
+      "kiss": {
+        "usage": "kiss",
+        "desc": "😘",
+        "permlevel": "User"
+      },
+
+      "laugh": {
+        "usage":"laugh",
+        "desc":"HAHASHSDHFH",
+        "permlevel":"User"
+      },
+
+      "run": {
+        "usage":"run",
+        "desc":"🏃 before user gets yyooooooooooooooooou",
+        "permlevel": "User"
+      },
+
+      "triggered": {
+        "usage": "triggered @User",
+        "desc":"WWWWWWHYYYYYYYYYYYYYYYY",
+        "permlevel": "User",
+        "examples": [
+          "triggered",
+          "triggered @sshcrack"
+        ]
+      }
+    },
+
+    "Categories": {
+      "Action": "🎬 Action",
+      "Anime": "Anime",
+      "Bot Owner": "Bot Owner",
+      "Core": "🤖 Core",
+      "Games": "🎮 Games",
+      "Info": "ℹ️ Info",
+      "Moderation": "🛠 Moderation",
+      "Other": "Other",
+      "Productivity": "📝 Producitvity",
+      "Economy": "💸 Economy",
+      "Random": "🎲 Random",
+      "Searches": "🔍 Searches",
+      "Text": "💬 Text",
+      "Music": "🎵 Music",
+      "Miscellaneous": "🔸 Miscellaneous",
+      "Utils": "🛠 Utils",
+      "Fun": "😹 Fun"
+    },
+
+    "PermLevels": [
+        "User",
+        "Moderator",
+        "Administrator",
+        "Server Owner",
+        "Bot Supporter",
+        "Bot Developer",
+        "Bot Owner"
+    ],
+
+    "NoEntry": "🥴 Couldn't find help for that command",
+    "aliases": "Aliases",
+    "help": "Help",
+    "andHigher": "and higher",
+    "permLevel": "Rank",
+    "example": "Example",
+    "examples": "Examples",
+    "noExamplesAvailable": "No examples available"
+  },
+
+  "RandomImage": {
+    "Cat": {
+      "finished": "A cat for you! 🐱",
+      "error": "Oh No! The cat is hiding (`An Error Occurred`)"
+    },
+    "Dog": {
+      "finished": "A dog for you! 🐶",
+      "error": "Oh No! The dog ran away (`An Error Occurred`)"
+    },
+    "Duck": {
+      "finished": "A duck for you! 🦆",
+      "error": "§!{General.errorOccurred}"
+    },
+    "Fox": {
+      "finished": "A fox for you! 🦊",
+      "error": "§!{General.errorOccurred}"
+    }
+  },
+  "RandomResponse": {
+    "Fact": {
+      "error": "§!{General.errorOccurred}"
+    },
+    "Advice": {
+      "error": "§!{General.errorOccurred}"
+    },
+    "Button": {
+      "error": "§!{General.errorOccurred}"
+    },
+    "DogFact": {
+      "finished": "A random dog fact for you! 🐶",
+      "fact": "Fact",
+      "error": "§!{General.errorOccurred}"
+    },
+    "CatFact": {
+      "finished": "A random cat fact for you! 🐱",
+      "fact": "Fact",
+      "error": "§!{General.errorOccurred}"
+    },
+    "DogName": {
+      "yourDogName": "🐶 Your dog name **%s**"
+    },
+    "CatName": {
+      "yourCatName": "🐱 Your cat name **%s**"
+    },
+    "SuperB": {
+      "msg": "Your SuperB word is **%s**"
+    },
+    "Cow": {
+      "msg": "Your cow:\n%s"
+    },
+    "superhero": {
+      "msg": "Your superhero %s"
+    },
+    "Fortune": {
+      "fortune": "🔮| %s",
+      "error": "§!{General.errorOccurred}"
+    },
+    "Joke": {
+      "finished": "Your joke 😹",
+      "error": "§!{General.errorOccurred}"
+    },
+
+    "KaoMoji": {
+      "finished": "Your Kaomoji ( ´ ▽ ` )ﾉ",
+      "error": "§!{General.errorOccurred}",
+      "wrongUsage": "Wrong usage",
+      "category": "Category: %s",
+      "availableCategories": "Available Categories are"
+    },
+
+    "Magic8Ball": {
+      "responses": [
+        "Yes.",
+        "No.",
+        "Only on Wednessdays.",
+        "I highly doubt it.",
+        "Maybe.",
+        "Most certainly!",
+        "Definitely not.",
+        "I hope not.",
+        "I hope so.",
+        "Forget about it.",
+        "My sources say no.",
+        "My sources say yes.",
+        "All signs point to yes.",
+        "Outlook not so good.",
+        "Only on Saturdays.",
+        "No way!",
+        "Hmm...",
+        "There is a good chance.",
+        "Certainly not.",
+        "I think so.",
+        "Possibly.",
+        "Sure.",
+        "You may rely on it.",
+        "Affirmative.",
+        "Negative.",
+        "Seems like my magic 8 ball is broken... Try again.",
+        "Quite likely.",
+        "I sure hope so!",
+        "Delete this and try again",
+        "Nahhhhhh",
+        "Don't count on it.",
+        "Maybe",
+        "Undoubtedly.",
+        "Outlook good.",
+        "Never.",
+        "No. Why would you even ask such a thing?"
+      ],
+      "says": "🎱| The magic8ball says %s"
+    }
+  },
+
+  "Utils": {
+    "Poll": {
+      "onCooldown": "<a:Clock:737394211258761277> The command is under cooldown. Please wait...",
+      "createdBy": "Created by %s",
+      "description": "React to vote."
+    },
+    "AsciiText": {
+      "tooLong": "<a:Error:737247277051150347> The result is too long."
+    },
+    "serverInfo": {
+      "title": "Server Information",
+      "name": "Server Name",
+      "owner": "Owner",
+      "rolesCount": "Roles",
+      "channelCount": "Channels",
+      "members": "Total Members",
+      "createdAt": "Created at",
+      "joinedAt": "You joined"
+    },
+    "Calc": {
+      "wrongEvaluation": "<a:Error:737247277051150347> Something wrent wrong while calculating... (*check your evaluation*)",
+      "result": "Result: %s"
+    }
+  },
+
+  "Action": {
+    "Angry": "%s is angry",
+    "Bite": "%s bites!",
+    "Clap": "%s claps",
+    "Cuddle": "%s cuddles",
+    "Dance": "%s dances",
+    "Die": "%s dies",
+    "Facepalm": "%s facepalms",
+    "Flare": "%s flares",
+    "Greet": "%s greets",
+    "Happy": "%s is happy",
+    "Hug": "%s hugs!",
+    "Kiss": "%s kisses",
+    "Laugh": "%s laughs",
+    "Run": "%s runs away",
+    "Sad": "%s is sad",
+    "Shoot": "%s shoots",
+    "Shrug": "%s shrugs",
+    "Shy": "%s is shy",
+    "Slap": "%s slaps",
+    "Smile": "%s smiles",
+    "Stare": "%s stares",
+    "Triggered": {
+      "generating": "Your gif is generating...",
+      "upTo40Seconds": "This can take up to 40 seconds",
+      "alreadyGenerating": "Your triggered Gif is already being generated",
+      "triggered": "%s is triggered",
+      "saysThat": "%s is triggered <@!%s>"
+    }
+  },
+
+  "Moderation": {
+    "reasonTooLong": "<a:Error:737247277051150347> Reason is too long. Make sure the reason-length is below 500",
+    "Clear": {
+      "cannotDelete": "<a:Error:737247277051150347> Invalid amount of Messages. Please ensure, that it's between 2 and 99.",
+      "deletedMessages": "<a:check:737237110238740481> Deleted %d Messages.",
+      "olderThanTwoWeeks": "<a:Error:737247277051150347> Cannot delete messages older than 14 Days.",
+      "logs": {
+        "cleared": "%s Messages were deleted",
+        "userCleared": "Messages from %s were deleted.",
+        "channel": "Channel"
+      },
+      "deleting": "<a:Clock:737394211258761277> Deleting messages..."
+    },
+    "Warn": {
+      "title": "<a:check:737237110238740481> User %s has been warned.",
+      "timedOut": "<a:Clock:737394211258761277> Timed out. The user was not warned.",
+      "cannotWarnSelf": "<a:Error:737247277051150347> You cannot warn yourself.",
+      "waitForReply": "Please enter the reason for the warning.",
+      "reason": "§!{General.reason}",
+      "reasonTooLong": "§!{Moderation.reasonTooLong}",
+      "dmMessage": "You have been warned for the reason %s. Make sure you follow the rules.",
+      "botNoWarnings": "<a:Error:737247277051150347> A bot can not be warned.",
+      "warning": "<a:Clock:737394211258761277> Warning..."
+    },
+    "TempBan": {
+      "mentionUser": "<a:Error:737247277051150347> Please mention a user.",
+      "durationWrong": "<a:Error:737247277051150347> Make sure your duration is correct.",
+      "reasonQuestion": "Please enter the reason for the TempBan",
+      "cancelled": "<a:Error:737247277051150347> Cancelled because no reason was given.",
+      "cannotBanSelf": "<a:Error:737247277051150347> You cant ban yourself.",
+      "targetedUserHasHigherRole": "<a:Error:737247277051150347> Wait... what are you trying to do there? (`The user has a higher role than you`)",
+      "embed": {
+        "title": "<a:Ban:737396552917843970> Banned user %s for **%s**",
+        "bannedTill": "Banned till",
+        "bannedValue": "%s",
+        "bannedBy": "Banned by %s"
+      },
+      "banning": "§!{Moderation.Ban.banning}"
+    },
+    "TempMute": {
+      "mentionUser": "<a:Error:737247277051150347> Please mention a user.",
+      "durationWrong": "<a:Error:737247277051150347> Make sure your duration is correct.",
+      "reasonQuestion": "Please enter the reason for the TempMute",
+      "alreadyMuted": "<a:Error:737247277051150347> This user is already muted.",
+      "cancelled": "<a:Error:737247277051150347> Cancelled because no reason was given.",
+      "targetedUserHasHigherRole": "<a:Error:737247277051150347> Wait... what are you trying to do there? (`The user has a higher role than you`)",
+      "cannotMuteSelf": "<a:Error:737247277051150347> You cant mute yourself.",
+      "embed": {
+        "title": "Muted user %s for **%s**",
+        "mutedTill": "Muted till",
+        "mutedValue": "%s",
+        "mutedBy": "Muted by %s"
+      },
+      "Muted": {
+        "question": "Currently no Muted Role exists. Do you want to create one? **Y**es / **N**o",
+        "timedOutRole": "<a:Clock:737394211258761277> Timed out. No role was created.",
+        "timedOutReason": "<a:Clock:737394211258761277> Timed out. The user was not muted",
+        "cancelled": "No Muted role was created. You will not be able to mute users without having the Muted Role."
+      },
+      "muting": "§!{Moderation.Mute.muting}"
+    },
+    "warnings": {
+      "title": "Warnings of user %s",
+      "warningsInfo": "%s: **%s** • %s • by %s \r\n",
+      "last24Hours": "Last 24 Hours",
+      "last7Days": "Last 7 Days",
+      "total": "Total",
+      "last10Warnings": "Last 10 Warnings",
+      "noWarnings": "No warnings.",
+      "author": "%s's warnings",
+      "botNoWarnings": "<a:Error:737247277051150347> A bot has no warnings."
+    },
+
+    "Ban": {
+      "banned": "<a:check:737237110238740481> %s has been banned.",
+      "reasonTooLong": "§!{Moderation.reasonTooLong}",
+      "timedOut": "<a:Clock:737394211258761277> Timed out. The user was not banned.",
+      "waitForReply": "Please enter the reason to ban.",
+      "banning": "<a:check:737237110238740481> Banning...",
+      "cannotBanSelf": "<a:Error:737247277051150347> You cant ban yourself.",
+      "dmMessage": "You were banned from **%s** by **%s** for the reason %s.",
+      "cannotBanHigher": "<a:Error:737247277051150347> You cant ban users with a higher role position than you.",
+      "cannotBanOwner": "<a:Error:737247277051150347> Wait, what are you trying to do there?",
+      "cannotBan": "<a:Error:737247277051150347> I can not ban that user. My role is under the role, the user has. Move my role above that user's highest role, so I can ban him"
+    },
+
+    "Kick": {
+      "kicked": "<a:check:737237110238740481> %s has been kicked.",
+      "reasonTooLong": "§!{Moderation.reasonTooLong}",
+      "timedOut": "<a:Clock:737394211258761277> Timed out. The user was not kicked.",
+      "waitForReply": "Please enter the reason to kick.",
+      "cannotKickSelf": "<a:Error:737247277051150347> You cant kick yourself.",
+      "dmMessage": "You were kicked from **%s** by **%s** for the reason %s.",
+      "cannotKickHigher": "<a:Error:737247277051150347> You cant kick users with a higher role position than you.",
+      "cannotKickOwner": "<a:Error:737247277051150347> Wait, what are you trying to do there?",
+      "cannotKick": "<a:Error:737247277051150347> I can not kick that user. My role is under the role, the user has. Move my role above that user's highest role, so I can kick him",
+      "reason": "§!{General.reason}",
+      "kicking": "<a:Clock:737394211258761277> Kicking..."
+    },
+
+    "AutoModeration": {
+      "title": "Automoderated Message",
+      "warn": "%s was warned by the auto moderation system",
+      "reason": "Automoderated message %s with with an probability of %s",
+      "message": "Message",
+      "probability": "Probability",
+      "poweredBy": "Powered by %s"
+    },
+
+    "fetchBans": {
+      "user": "user is",
+      "users": "users are",
+      "title": "<a:Ban:737396552917843970> Banned Users",
+      "entry": "%s %s currently banned."
+    },
+    "listBans": {
+      "firstTitle": "**Banned users** on server **%s** are",
+      "entry": "**%s** banned by **%s**  ",
+      "noBans": "\r\nCurerently are no users banned.",
+      "dmedMessage": "<a:check:737237110238740481> I dmed you the list of bans."
+    },
+
+    "Mute": {
+      "question": "Currently no Muted Role exists. Do you want to create one? **Y**es / **N**o",
+      "timedOutRole": "<a:Clock:737394211258761277> Timed out. No role was created.",
+      "timedOutReason": "<a:Clock:737394211258761277> Timed out. The user was not muted",
+      "cancelled": "No Muted role was created. You will not be able to mute users without having the Muted Role.",
+      "cantMuteSelf": "<a:Error:737247277051150347> You can not mute yourself.",
+      "cantMuteHigher": "<a:Error:737247277051150347> You cant mute users with a higher role position than you.",
+      "waitForReply": "Please enter the reason to mute.",
+      "reasonTooLong": "§!{Moderation.reasonTooLong}",
+      "dmMessage": "You were muted from **%s** by **%s** for the reason %s.",
+      "alreadyMuted": "<a:Error:737247277051150347> That user is already muted.",
+      "muted": "<a:check:737237110238740481> User **%s** has been muted.",
+      "muting": "<a:Clock:737394211258761277> Muting..."
+    },
+
+    "Unmute": {
+      "noMuteRole": "No __Muted__ role is created. You can do that by running the Mute Command.",
+      "cantUnmuteSelf": "<a:Error:737247277051150347> You cant unmute yourself.",
+      "cantUnmuteHigher": "<a:Error:737247277051150347> You cant unmute users with a higher role position than you.",
+      "alreadyUnmuted": "<a:Error:737247277051150347> That user is already unmuted.",
+      "waitForReply": "Please enter the reason to unmute.",
+      "reasonTooLong": "§!{Moderation.reasonTooLong}",
+      "timedOut": "<a:Clock:737394211258761277> Timed out. The user was not unmuted",
+      "dmMessage": "You were unmuted by **%s** for the reason %s.",
+      "unmuted": "<a:check:737237110238740481> The user has been unmuted.",
+      "logs": {
+        "title": "%s has been unmuted",
+        "reason": "§!{General.reason}"
+      },
+      "unmuting": "<a:Clock:737394211258761277> Unmuting..."
+    }
+  },
+
+  "General": {
+    "wrongArgs": "<a:Error:737247277051150347> Wrong Arguments! Use %shelp %s or react with ❓ to get help.",
+    "errorOccurred": "Oh No! `An Error Occurred`",
+    "noPermission": "<a:Error:737247277051150347> You do **no**t have the **permission** to do that.",
+    "poweredBy": "Moderation system by sshbot, made by sshcrack#0977",
+    "isBot": "<a:Error:737247277051150347> You cant mention this user. This user is a bot",
+    "commandIssuesBy": "Command issued by %s",
+    "reason": "Reason",
+    "notInSameChannel": "<a:Error:737247277051150347> You have to be in the same channel as the bot is."
+  },
+
+  "Bot": {
+    "customprefix": "The normal prefix for the server is `%s`\r\n but you are special! You have the prefix `%s`",
+    "myprefix": "My prefix is `%s`"
+  },
+
+  "Core": {
+    "Ping": {
+      "uptime": "Uptime",
+      "myuptime": "My uptime: %s",
+      "pong": "Pong",
+      "myping": "My ping: %s ms",
+      "time": "%s Days %s Hours %s Minutes and %s seconds"
+    },
+    "Settings": {
+      "addedRole": "<a:check:737237110238740481> Added role",
+      "removedRole": "<a:check:737237110238740481> Removed role",
+      "Mods": {
+        "NoMods": "No Mod-Roles are currently added. Add them with settings mods add <@Role>",
+        "Mods": "Mod-Roles are %s",
+        "IsNotMod": "<a:Error:737247277051150347> This role is **not added** to the **Mod-Roles**.",
+        "addedRole": "§!{Core.Settings.addedRole}",
+        "removedRole": "§!{Core.Settings.removedRole}"
+      },
+      "Admin": {
+        "NoAdmins": "No Admin-Roles are currently added. Add them with settings admins add <@Role>",
+        "Admins": "Admin-Roles are %s",
+        "IsNotAdmin": "<a:Error:737247277051150347> This role is **not added** to the **Admin-Roles**.",
+        "addedRole": "§!{Core.Settings.addedRole}",
+        "removedRole": "§!{Core.Settings.removedRole}"
+      },
+      "LogChannel": {
+        "removed": "<a:check:737237110238740481> Removed logs channel.",
+        "set": "<a:check:737237110238740481> Channel was set to %s"
+      },
+      "AutoModerate": {
+        "set": "<a:check:737237110238740481> Auto Moderation is now %s",
+        "enabled": "enabled",
+        "disabled": "disabled"
+      },
+      "Youtube": {
+        "noTitleOrDesc": "<a:Error:737247277051150347> No title or description get more help from %shelp settings",
+        "enterTitle": "Enter the title for the new youtube embed",
+        "enterDescription": "Enter the description for the new youtube embed",
+        "vars": "Variables are *{{user}}* *{{title}}* *{{description}}*",
+        "timedOut": "<a:Clock:737394211258761277> Timed out, youtube embed was not created.",
+        "set": "<a:check:737237110238740481> Youtube Embed in Channel <#%s> with YoutubeChannelID %s was created.",
+        "list": "Channels with Youtube configured are: ",
+        "title": "Title",
+        "desc": "Description",
+        "nothingAdded": "No Youtube configuration was added.",
+        "channelNotFound": "Youtube Channel %s was not found. Make sure its a youtube channel url: Example: https://youtube.com/user/PewDiePie"
+      },
+
+      "Welcome": {
+        "leaveMSGSet": "<a:check:737237110238740481> Leave Message was set.",
+        "joinMSGSet": "<a:check:737237110238740481> Join Message was set.",
+        "welcomeChannelSet": "<a:check:737237110238740481> The Welcome Channel was set.",
+        "noWelcomeChannel": "<a:Error:737247277051150347> Please set the welcome channel first."
+      }
+    },
+    "Prefix": {
+      "tooLong": "<a:Error:737247277051150347> The prefix is too long.",
+      "prefixSet": "<a:check:737237110238740481> Prefix was set to %s",
+      "noSpaces": "<a:Error:737247277051150347> Your prefix can not contain spaces."
+    },
+    "Language": {
+      "available": {
+        "en": "🇺🇸 English",
+        "de": "🇩🇪 German"
+      },
+      "availableMSG": "Available Languages are: %s",
+      "globalLanguageSet": "<a:check:737237110238740481> Global language was set to %s",
+      "userLanguageSet": "<a:check:737237110238740481> Your language was set to %s"
+    },
+    "autoRole": {
+      "noReactMSGs": "Currently no react-actions are added.",
+      "alreadyExists": "An react-action has already been added with emoji %s",
+      "created": "<a:check:737237110238740481> AutoRole added.",
+      "removed": "<a:check:737237110238740481> Removed AutoRole for Emoji %s and Message %s",
+      "notThisGuild": "<a:Error:737247277051150347> The link given is not pointing to a message on this guild.",
+      "wrongChannelType": "<a:Error:737247277051150347> This is not a text channel.",
+      "messageNotFound": "<a:Error:737247277051150347> The message the given link points to was not found",
+      "channelNotFound": "<a:Error:737247277051150347> The channel the given link points to was not found",
+      "autoRoleNotFound": "<a:Error:737247277051150347> AutoRole-Message not found",
+      "invalidChannelType": "<a:Error:737247277051150347> Invalid channel type given by the link",
+      "list": {
+        "title": "List of AutoRoles-Messages"
+      },
+      "Message": "Message",
+      "GivesRole": "gives role %s when reacting with %s",
+      "channel": "#%s",
+      "roleEmbedTitle": "<a:Error:737247277051150347> Not enough Permission",
+      "desc": "The bot does not have enough permission to give that role to a user.",
+      "emojiDoesNotExist": "<a:Error:737247277051150347> Emoji does not exist"
+    }
+  },
+
+  "Fun": {
+    "Say": {
+      "requested": "Requested by %s"
+    }
+  },
+
+  "Searches": {
+    "AnimeSearch": {
+      "result": "My Anime List search result for %s",
+      "english": "English Title",
+      "japanese": "Japanese Title",
+      "type": "Type",
+      "episodes": "Episodes",
+      "score": "Score",
+      "ratings": "Ratings",
+      "aired": "Aired",
+      "scoreStats": "Score stats"
+    },
+    "Osu": {
+      "osuSearch": "Osu Search",
+      "nickname": "Nickname",
+      "rank": "Rank",
+      "level": "Level",
+      "country": "Country",
+      "countryRank": "Country Rank",
+      "playCount": "Play-Count",
+      "accuracy": "Accuracy",
+      "notValidUsername": "Please, provide a valid user's nickname! (osu!)"
+    },
+    "Github": {
+      "noResults": "No results were found for %s",
+      "tooLong": "<a:Error:737247277051150347> Your query is too long.",
+      "embed": {
+        "noLicense": "No License",
+        "openIssues": "Open Issues",
+        "watchers": "Watchers",
+        "stars": "Stars",
+        "forks": "Forks",
+        "defaultBranch": "Default Branch",
+        "license": "License"
+      }
+    },
+    "Cash": {
+      "msg": "%s %s are **%s** **%s**",
+      "currencyNotFound": "The currency / currencies were not found."
+    },
+    "Weather": {
+      "humidity": "Humidity",
+      "temperature": "Temperature",
+      "feelsLike": "Feels like",
+      "skytext": "Skytext",
+      "wind": "Wind",
+      "weatherFor": "Weather for %s",
+      "notFound": "Location `%s` was not found."
+    },
+    "Steam": {
+      "cc": "us",
+      "l": "en",
+      "noGameFound": "The __game__ you searched for was __not found__.",
+      "noSuccess": "The Steam API failed.",
+      "Requirements": "Requirements",
+      "price": "Price",
+      "categories": "Categorie",
+      "genres": "Genres",
+      "Videos": "Videos",
+      "Screenshots": "Screenshots",
+      "releaseDate": "Release Date",
+      "supportedPlatforms": "Supported Platforms"
+    },
+
+    "Wikipedia": {
+      "lang": "en",
+      "notFound": "No pages were found.",
+      "wordCount": "Wordcount: %s"
+    },
+
+    "Hypixel": {
+      "apiFailHypixel": "The Hypixel API failed.",
+      "apiFailUUID": "The UUID API failed.",
+      "available": "Available Stats are: %s",
+      "title": "Stats for player %s",
+      "lastLogin": "Last Login",
+      "firstLogin": "First Login",
+      "SuperSmash": {
+        "coins": "Coins",
+        "win_streak": "Win Streak"
+      },
+      "Quake": {
+        "coins": "Coins"
+      },
+      "Arcade": {
+        "coins": "Coins",
+        "goals_soccer": "Soccer Goals",
+        "wins_simon_says": "Simon Says Wins"
+      },
+      "Battleground": {
+        "coins": "Coins",
+        "selected_mount": "Selected Mount"
+      },
+      "MCGO": {
+        "kills_deathmatch": "Kills - Deathmatch",
+        "bombs_planted": "Bombs planted",
+        "game_wins": "Game Wins",
+        "deaths": "Deaths"
+      },
+      "TNTGames": {
+        "coins": "Coins",
+        "winstreak": "Win Streak",
+        "wins": "Wins"
+      },
+      "SkyWars": {
+        "souls": "Souls",
+        "kills": "Kills",
+        "killstreak": "Killstreak",
+        "assists": "Assists",
+        "egg_thrown": "Eggs thrown",
+        "deaths": "Deaths",
+        "games": "Games played",
+        "losses": "Losses",
+        "wins": "Wins",
+        "winstreak": "Win Streak",
+        "coins": "Coins",
+        "games_solo": "Solo Games",
+        "kills_solo": "Solo Kills",
+        "longest_bow_shot": "Longest Bow Shot"
+      },
+      "SkyClash": {
+        "games": "Games played",
+        "kills": "Kills",
+        "killstreak": "Killstreak",
+        "win_streak": "Win Streak",
+        "losses": "Losses",
+        "bow_shots": "Bow shots",
+        "coins": "Coins"
+      },
+      "UHC": {
+        "coins": "Coins"
+      },
+      "TrueCombat": {
+        "win_streak": "Win Streak",
+        "deaths": "Deaths",
+        "games": "Games played",
+        "coins": "Coins",
+        "items_enchanted": "Items enchanted"
+      },
+      "Walls3": {
+        "losses": "Losses",
+        "food_eaten": "Food Eaten",
+        "total_deaths": "Deaths",
+        "time_played": "Time played",
+        "coins": "Coins"
+      },
+      "GingerBread": {
+        "coins": "Coins"
+      },
+      "Paintball": {
+        "kills": "Kills",
+        "killstreak": "Killstreak",
+        "deaths": "Deaths",
+        "coins": "Coins"
+      },
+      "VampireZ": {
+        "coins": "Coins"
+      },
+      "Legacy": {
+        "total_tokens": "Tokens",
+        "paintball_tokens": "Paintball Tokens"
+      },
+      "HungerGames": {
+        "coins": "Coins",
+        "wins_teams_normal": "Team Wins",
+        "wins_solo_normal": "Solo Wins",
+        "wins": "Wins"
+      },
+      "Walls": {
+        "coins": "Coins"
+      },
+      "Arena": {
+        "coins": "Coins"
+      },
+      "Bedwars": {
+        "Experience": "Experience",
+        "items_purchased_bedwars": "Items purchased",
+        "games_played_bedwars": "Games played",
+        "kills_bedwars": "Kills",
+        "final_kills_bedwars": "Final Kills",
+        "deaths_bedwars": "Deaths",
+        "winstreak": "Win Streak",
+        "wins_bedwars": "Wins",
+        "losses_bedwars": "Losses",
+        "beds_lost_bedwars": "Beds lost",
+        "beds_broken_bedwars": "Beds broken",
+        "bedwars_boxes": "Bedwars Boxes"
+      },
+      "SpeedUHC": {
+        "coins": "Coins",
+        "games": "Games played",
+        "win_streak": "Win Streak",
+        "losses": "Losses",
+        "kills": "Kills",
+        "killstreak": "Killstreak"
+      },
+      "MurderMystery": {
+        "suicides": "Suicides",
+        "deaths": "Deaths",
+        "games": "Games played",
+        "wins": "Wins",
+        "coins": "Coins",
+        "kills_as_murderer": "Kills as Murderer",
+        "was_hero": "Hero Kills",
+        "detective_wins": "Detective Wins"
+      },
+      "Duels": {
+        "damage_dealt": "Damage Dealt",
+        "bow_hits": "Bow Hits",
+        "deaths": "Deaths",
+        "kills": "Kills",
+        "wins": "Wins",
+        "losses": "Losses",
+        "coins": "Coins"
+      },
+      "Pit": {
+        "pit_stats_ptl.deaths": "Deaths",
+        "pit_stats_ptl.damage_received": "Damage Received",
+        "pit_stats_ptl.kills": "Kills",
+        "pit_stats_ptl.max_streak": "Max Streak"
+      },
+      "Skyblock": {},
+      "BuildBattle": {
+        "coins": "Coins",
+        "games_played": "Games played",
+        "wins": "Wins"
+      }
+    }
+  },
+
+  "Music": {
+    "Play": {
+      "searchMSG": "🎶 Choose the song you want me to play! \r\n %s \r\n Stop the search by typing `cancel`!",
+      "entry": "`%s`: `%s`",
+      "timedOut": "<a:Clock:737394211258761277> Timed out / canceled.",
+      "noNumber": "<a:Error:737247277051150347> Make sure you provide a valid number.",
+      "nothingFound": "<a:Error:737247277051150347> No results were found.",
+      "indexTooBig": "<a:Error:737247277051150347> Make sure your input-number is between %s and %s.",
+      "notInVoice": "<a:Error:737247277051150347> You have to be in a voice channel",
+      "searchActive": "<a:Error:737247277051150347> A search is already active. Please wait till that search is completed.",
+      "hasToBeInChannel": "<a:Error:737247277051150347> You have to be in the same voice channel as the bot."
+    },
+    "Pause": {
+      "alreadyPaused": "<a:Error:737247277051150347> The player is already paused.",
+      "paused": "<a:check:737237110238740481> Paused."
+    },
+    "Resumed": {
+      "alreadyResumed": "<a:Error:737247277051150347> The player is playing already.",
+      "resumed": "<a:check:737237110238740481> Resumed."
+    },
+    "Disconnect": {
+      "notActive": "The player is currently not playing.",
+      "disconnected": "<a:check:737237110238740481> Disconnected."
+    },
+    "Volume": {
+      "notActive": "§!{Music.Disconnect.notActive}",
+      "volumeSet": "<a:check:737237110238740481> Volume set to %s%",
+      "noNumber": "<a:Error:737247277051150347> Make sure you provide a valid number",
+      "notInRange": "<a:Error:737247277051150347> Be sure the number is between 1 and 100"
+    },
+    "Queue": {
+      "element": "*%s* - **%s** ⏱ %s 👤 %s",
+      "queue": {
+        "title": "Queue",
+        "length": {
+          "field": "Length",
+          "value": "%s"
+        },
+        "next": {
+          "field": "Queued tracks 🎧"
+        },
+        "noTracksQueued": "No tracks queued."
+      },
+      "requestedBy": "Requested by %s"
+    },
+    "Skip": {
+      "notPlaying": "The bot is currently not playing anything",
+      "hasToBeInChannel": "§!{Music.Play.hasToBeInChannel}",
+      "skipped": "<a:check:737237110238740481> Skipped."
+    },
+    "Embed": {
+      "title": "%s",
+      "length": "Length",
+      "volume": "Volume",
+      "status": {
+        "field": "Status",
+        "playing": "▶ Playing",
+        "paused": "⏸ Paused"
+      },
+      "queue": {
+        "field": "Queue",
+        "value": "%d in queue"
+      },
+      "filters": "Enabled filters",
+      "noFilters": "No filters enabled."
+    },
+    "Filters": {
+      "notPlaying": "<a:Error:737247277051150347> The bot must be playing in this guild.",
+      "notInSameChannel": "<a:Error:737247277051150347> You have to be in the same channel as the bot is.",
+      "toggled": "<a:check:737237110238740481> Filter %s was %s",
+      "enabled": "enabled",
+      "disabled": "disabled",
+      "wrongFilter": "<a:Error:737247277051150347> Available filters are %s"
+    }
+  },
+
+  "Economy": {
+    "Profile": {
+      "level": "Level",
+      "money": "Money",
+      "birthday": "Birthday",
+      "unknown": "Unknown",
+      "gender": "Gender",
+      "joinedAt": "Joined at",
+      "messages": "Messages sent",
+      "description": "Description",
+      "noDesc": "No description",
+      "generating": "Your profile is generating...",
+      "decimalCount": 2,
+      "decimal": ".",
+      "thousands": ","
+    },
+    "Money": {
+      "money": "Your 💸 is %s",
+      "moneyFrom": "💸 from %s is %s"
+    },
+    "Spin": {
+      "spinning": "Spinning the wheel of fortune 🎰",
+      "canWin": "You can win between %s and %s",
+      "won": "You won %s",
+      "lostMoney": "Aaand your money is **GONE**. You lost %s",
+      "onCooldown": "<a:Clock:737394211258761277> This command has a 12 hour cooldown. Please try again later."
+    }
+  }
+}
