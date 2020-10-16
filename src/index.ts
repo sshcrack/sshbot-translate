@@ -49,8 +49,13 @@ const asyncRun = async () => {
     {
       type: 'autocomplete',
       name: 'language',
-      message: 'Select a state to travel from',
+      message: 'Select a language for translation',
       source: (_answersSoFar: string, input: string) => searchArray(Object.keys(languages), input)
+    },
+    {
+      type: "confirm",
+      message: "Wait between requests?",
+      name: "skip"
     }
   ])
   const res: string = answered?.path;
@@ -62,7 +67,7 @@ const asyncRun = async () => {
   const languageFile = JSON.parse(languageFileRaw);
   const languageKey = languages[answered?.language];
 
-  await processReferences(languageFile, languageKey);
+  await processReferences(languageFile, languageKey, answered?.skip);
 
   fsProm.writeFile(`${languageKey}.json`, JSON.stringify(languageFile));
 }
@@ -92,7 +97,7 @@ function searchArray(array: readonly string[], input: string) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function processReferences(messages: any, toLanguage: string, originalMessages?: unknown, progress?: ProgressBar): Promise<unknown> {
+function processReferences(messages: any, toLanguage: string, skipWaiting = false, originalMessages?: unknown, progress?: ProgressBar, path = ""): Promise<unknown> {
   return new Promise(async resolve => {
     if (originalMessages === undefined) originalMessages = messages;
 
@@ -105,9 +110,9 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
 
     // eslint-disable-next-line functional/no-loop-statement
     for (const k in messages) {
-      if (typeof messages[k] == "object" && messages[k] !== null) {
-        await processReferences(messages[k], toLanguage, originalMessages, progress);
-      } else {
+      if (typeof messages[k] == "object" && messages[k] !== null)
+        await processReferences(messages[k], toLanguage, skipWaiting, originalMessages, progress, `${path}.${k}`);
+      else {
         const regex = /^§!{.*}$/g;
 
         if (regex.test(messages[k])) {
@@ -121,11 +126,11 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
         const emojiRegex = /(<:|<a:)((\w{1,64}:\d{17,18}))(>)/gim;
         const msg: string = messages[k];
 
-        if (msg !== undefined && typeof msg === 'string') {
+        if (msg !== undefined && typeof msg === 'string' && k !== "usage" && !path.includes("examples") && !path.includes("aliases")) {
           const array = msg.match(emojiRegex);
-          const filtered = msg.replace(emojiRegex, "");
+          const filtered = msg.replace(emojiRegex, "").split("\n");
 
-          const requestUrl = `https://api.microsofttranslator.com/v2/ajax.svc/TranslateArray?appId=%22TlNZarnQP6YQDHSwVGXO-Q-x-x3habdzUZ7omWmglAgM*%22&texts=["${encodeURIComponent(filtered)}"]&to=%22${toLanguage}%22&ctr=&ref=WidgetV2&rgp=22d9c751`;
+          const requestUrl = `https://api.microsofttranslator.com/v2/ajax.svc/TranslateArray?appId=%22TlNZarnQP6YQDHSwVGXO-Q-x-x3habdzUZ7omWmglAgM*%22&texts=[${filtered.map(value => `"${encodeURIComponent(value)}"`).join(",")}]&to=%22${toLanguage}%22&ctr=&ref=WidgetV2&rgp=22d9c751`;
 
           progress.tick(0, {
             status: "Translating..."
@@ -133,12 +138,14 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
 
           const response = (await (await fetch(requestUrl)).text()).substring(1);
 
-          const translated: MicrosoftTranslate = JSON.parse(response);
+          const json: readonly MicrosoftTranslate[] = JSON.parse(response);
 
-          progress.tick(0, {
-            status: "Waiting..."
-          });
-          await delay(50, "waiting");
+          if (!skipWaiting) {
+            progress.tick(0, {
+              status: "Waiting..."
+            });
+            await delay(100, "waiting");
+          }
 
           progress.tick(1, {
             status: "Finalizing..."
@@ -148,8 +155,20 @@ function processReferences(messages: any, toLanguage: string, originalMessages?:
           if (array)
             addEmoji = array.join(" ") + " "
 
-          let final = `${addEmoji}${translated[0].TranslatedText}`;
-          messages[k] = final;
+          if (response.includes("IP is over the quota")) {
+            console.log(chalk`\n\n\n{red QUOTA LIMIT EXCEEDED}`);
+            process.exit(0);
+          }
+
+          if (!json[0].TranslatedText) {
+            console.log(chalk`\n\n\n{red TRANSLATION ERROR: ${response}}`)
+            messages[k] = `TRANSLATION ERROR: ${response}`;
+          } else {
+            let joined = json.map(value => `${value.TranslatedText}`).join("\n");
+            let final = `${addEmoji}${joined}`;
+            messages[k] = final;
+          }
+
         }
       }
     }
@@ -180,8 +199,7 @@ function delay(t, val) {
   });
 }
 
-
-type MicrosoftTranslate = {
+export type MicrosoftTranslate = {
   readonly From: string;
   readonly OriginalTextSentenceLengths: readonly number[];
   readonly TranslatedText: string;

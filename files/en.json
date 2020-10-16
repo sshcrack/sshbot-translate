@@ -791,7 +791,7 @@
     },
     "warnings": {
       "title": "Warnings of user %s",
-      "warningsInfo": "%s: **%s** • %s • by %s \r\n",
+      "warningsInfo": "%s: **%s** • %s • by %s \n",
       "last24Hours": "Last 24 Hours",
       "last7Days": "Last 7 Days",
       "total": "Total",
@@ -846,7 +846,7 @@
     "listBans": {
       "firstTitle": "**Banned users** on server **%s** are",
       "entry": "**%s** banned by **%s**  ",
-      "noBans": "\r\nCurerently are no users banned.",
+      "noBans": "\nCurerently are no users banned.",
       "dmedMessage": "<a:check:737237110238740481> I dmed you the list of bans."
     },
 
@@ -895,7 +895,7 @@
   },
 
   "Bot": {
-    "customprefix": "The normal prefix for the server is `%s`\r\n but you are special! You have the prefix `%s`",
+    "customprefix": "The normal prefix for the server is `%s`\n but you are special! You have the prefix `%s`",
     "myprefix": "My prefix is `%s`"
   },
 
@@ -1229,7 +1229,7 @@
 
   "Music": {
     "Play": {
-      "searchMSG": "🎶 Choose the song you want me to play! \r\n %s \r\n Stop the search by typing `cancel`!",
+      "searchMSG": "🎶 Choose the song you want me to play! \n %s \n Stop the search by typing `cancel`!",
       "entry": "`%s`: `%s`",
       "timedOut": "<a:Clock:737394211258761277> Timed out / canceled.",
       "noNumber": "<a:Error:737247277051150347> Make sure you provide a valid number.",
