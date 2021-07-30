@@ -53,7 +53,7 @@
     "inquirer": "^7.3.3",
     "inquirer-autocomplete-prompt": "^1.4.0",
     "inquirer-fuzzy-path": "^2.3.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
     "ora": "^5.4.1",
     "progress": "^2.0.3"
